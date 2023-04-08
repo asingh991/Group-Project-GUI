@@ -1,0 +1,65 @@
+import tkinter
+from tkinter import *
+
+# creating an instance of Tk class, this creates the application window
+root = tkinter.Tk()
+# root window title and dimension
+root.title("Scapy Lite")
+# Set geometry (widthxheight)
+root.geometry('600x600')
+'''
+# creating a Label widget that belongs to the container root (root window is a container) 
+message = tkinter.Label(root, text="Hello, World!")
+message.pack()
+
+# keep the window displaying
+root.mainloop()'''
+'''
+       label.pack(side="top", fill="both", expand=True)
+        button.pack(side="left")
+'''
+frame=tkinter.Frame(root,bg='lightblue')
+lable=tkinter.Label(root, text='Welcome to the home page of scapy tool please choose one of the tabs above to navigate')
+frame.place(relx=0,rely=0,relheight=0.4,relwidth=1)
+lable.place(relx=0,rely=0.2)
+
+def page1():
+    frame1=tkinter.Frame(root,bg='grey')
+    frame1.place(relx=0,rely=0.1,relheight=0.4,relwidth=0.98)
+    label=tkinter.Label(frame1,text='Please fill the below fields, enter the interface ')
+    label.place(relx=0.1,rely=0.4)
+    # adding Entry Fields
+    interface_number = Entry(root, width=10)
+    interface_number.place(relx=0.3,rely=0.3)
+    submit_button1=tkinter.Button(frame1,text='Submit',command=page2)
+    submit_button1.place(relx=0.6,rely=0.6)
+
+def page2():
+    frame2=tkinter.Frame(root,bg='grey')
+    frame2.place(relx=0,rely=0.1,relheight=0.4,relwidth=0.98)
+    label=tkinter.Label(frame2,text='Which attack would you like to run, please choose one type of attack')
+    label.place(relx=0.1,rely=0.4)
+    # adding Entry Fields
+    attack_number = Entry(root, width=10)
+    attack_number.place(relx=0.3,rely=0.3)
+    submit_button1=tkinter.Button(frame2,text='Submit',command='this would contain the print function that would valid the inputs first using a prompt')
+    submit_button1.place(relx=0.6,rely=0.6)
+
+def page3():
+    frame3=tkinter.Frame(root,bg='grey')
+    frame3.place(relx=0,rely=0.1,relheight=0.4,relwidth=1)
+    label=tkinter.Label(frame3,text='Welcome to the help page! Here we would explain to users how to utilize this tool')
+    label.place(relx=0.05,rely=0.4)
+
+bt=tkinter.Button(root,text='Run a Nmap scan',command=page1)
+bt.grid(column=0,row=0)
+
+bt1=tkinter.Button(root,text='Attacks',command=page2)
+bt1.grid(row=0,column=1)
+
+bt2=tkinter.Button(root,text='Help page',command=page3)
+bt2.grid(row=0,column=2)
+
+root.mainloop()
+# reference https://stackoverflow.com/questions/14817210/using-buttons-in-tkinter-to-navigate-to-different-pages-of-the-application
+# https://stackoverflow.com/questions/14817210/using-buttons-in-tkinter-to-navigate-to-different-pages-of-the-application
